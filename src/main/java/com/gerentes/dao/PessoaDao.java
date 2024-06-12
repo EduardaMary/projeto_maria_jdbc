@@ -1,6 +1,8 @@
 package com.gerentes.dao;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 import com.gerentes.conexao.Conexao;
 
 
@@ -28,7 +30,45 @@ public class PessoaDao {
             
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Não foi possivel conectar o banco");
+            System.out.println("");
         }
     } 
+    
+
+    public void consultarPessoa(PessoaPojo pessoaPojo) {
+
+        Conexao conexao = new Conexao();
+
+        String sql = "select * from professor where id = ?";
+
+        PreparedStatement ps = null;
+        
+        try {
+            ps = conexao.getConexao().prepareStatement(sql);
+    
+            ResultSet rs = ps.executeQuery() {
+            while (rs.next()) {
+                PessoaPojo pessoa = new PessoaPojo();
+                pessoa.setId(rs.getInt(1));
+                pessoa.setNome(rs.getString("nome"));
+                pessoa.setEndereco(rs.getString("endereco"));
+                pessoa.setIdade(rs.getInt("idade"));
+                pessoas.add(pessoa);
+            }
+
+            ps.execute();
+            ps.close();
+
+            System.out.println("Conectou ao banco de dados!!");
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("");
+        }
+    } 
+
+
+          
+
 }
+
