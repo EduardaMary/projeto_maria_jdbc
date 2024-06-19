@@ -1,4 +1,4 @@
-package com.gerentes.diciplina;
+package com.gerentes.modelo;
 
 public class Diciplina {
     private String nome;

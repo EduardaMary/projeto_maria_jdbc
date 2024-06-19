@@ -35,6 +35,8 @@ public class PessoaDao {
     } 
     
 
+
+ 
     public void consultarPessoa(PessoaPojo pessoaPojo) {
 
         Conexao conexao = new Conexao();
@@ -46,14 +48,15 @@ public class PessoaDao {
         try {
             ps = conexao.getConexao().prepareStatement(sql);
     
-            ResultSet rs = ps.executeQuery() {
+            ResultSet rs = ps.executeQuery();
             while (rs.next()) {
+                @SuppressWarnings("deprecation")
                 PessoaPojo pessoa = new PessoaPojo();
-                pessoa.setId(rs.getInt(1));
+                pessoa.setIdade(rs.getInt(1));
                 pessoa.setNome(rs.getString("nome"));
                 pessoa.setEndereco(rs.getString("endereco"));
                 pessoa.setIdade(rs.getInt("idade"));
-                pessoas.add(pessoa);
+                pessoa.add(pessoa);
             }
 
             ps.execute();
@@ -61,14 +64,11 @@ public class PessoaDao {
 
             System.out.println("Conectou ao banco de dados!!");
             
-        } catch (Exception e) {
+        } catch (Exception e){
             e.printStackTrace();
             System.out.println("");
         }
-    } 
-
-
-          
+        
+    }
 
 }
-

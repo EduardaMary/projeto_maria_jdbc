@@ -38,4 +38,8 @@ public class PessoaPojo {
     public void setIdade(int idade) {
         this.idade = idade;
     }
+
+    public void add(PessoaPojo pessoa) {
+        throw new UnsupportedOperationException("Unimplemented method 'add'");
+    }
 }
