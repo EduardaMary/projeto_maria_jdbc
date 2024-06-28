@@ -1,5 +1,7 @@
 package com.gerentes.dao;
 
+import com.gerentes.modelo.Pessoa;
+
 public class PessoaPojo {
     private String nome;
     private String endereco;
@@ -39,7 +41,8 @@ public class PessoaPojo {
         this.idade = idade;
     }
 
-    public void add(PessoaPojo pessoa) {
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+    public Pessoa add(PessoaPojo pessoaPojo) {
+       Pessoa pessoa = new Pessoa(pessoaPojo.getNome(), pessoaPojo.getEndereco(), pessoaPojo.getIdade() );
+       return pessoa;
     }
 }
