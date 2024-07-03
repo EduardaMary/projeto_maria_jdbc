@@ -1,26 +1,59 @@
 package com.gerentes;
 
-import com.gerentes.dao.PessoaDao;
-import com.gerentes.dao.PessoaPojo;
-import com.gerentes.modelo.Pessoa;
+import com.gerentes.dao.DiciplinaPojo;
+import com.gerentes.dao.DiciplinaDao;
+import com.gerentes.modelo.Diciplina;
 
 public class App {
     public static void main(String[] args)
-    {     
-        Pessoa pessoa = new Pessoa();
-        pessoa.setNome("Maria");
-        pessoa.setEndereco("Rua benjamim Constante, 715");
-        pessoa.setIdade(18);
+    {   
+        /*  
+        Diciplina diciplina = new Diciplina();
+        diciplina.setNome("matematica");
+        diciplina.setCargaHoraria(16);
+        diciplina.setProfessor("marcos");
 
-        PessoaPojo pessoaPojo = new PessoaPojo();
-        pessoaPojo.setNome(pessoa.getNome());
-        pessoaPojo.setEndereco(pessoa.getEndereco());
-        pessoaPojo.setIdade(pessoa.getIdade());
+        DiciplinaPojo diciplinaPojo = new DiciplinaPojo();
+        diciplinaPojo.setNome(diciplina.getNome());
+        diciplinaPojo.setCargaHoraria(diciplina.getCargaHoraria());
+        diciplinaPojo.setProfessor(diciplina.getProfessor());
 
-        PessoaDao pessoaDao = new PessoaDao();
-        pessoaDao.cadastrarPessoa(pessoaPojo);
+        //Cadastra
+        DiciplinaDao diciplinaDao = new DiciplinaDao();
+        diciplinaDao.cadastrarDiciplina(diciplinaPojo);
+        =========================================================================================*/
 
-        System.out.println("Alteração no código");
+        /*
+        DiciplinaPojo diciplinaPojo = new DiciplinaPojo();
+        diciplinaPojo.setId(2);
+
+        DiciplinaDao diciplinaDao = new DiciplinaDao();
+        diciplinaDao.consultarDiciplina(diciplinaPojo);
+        =========================================================================================*/
+        
+        Diciplina diciplina = new Diciplina();
+        diciplina.setNome("Back end");
+        diciplina.setCargaHoraria(9);
+        diciplina.setProfessor("guilerme");
+        
+        DiciplinaPojo diciplinaPojo = new DiciplinaPojo();
+        diciplinaPojo.setNome(diciplina.getNome());
+        diciplinaPojo.setCargaHoraria(diciplina.getCargaHoraria());
+        diciplinaPojo.setProfessor(diciplina.getProfessor());
+
+        diciplinaPojo.setId(1);
+        
+
+        DiciplinaDao diciplinaDao = new DiciplinaDao();
+        diciplinaDao.Alterardiciplina(diciplinaPojo);
+
+
+
+
+       // diciplinaPojo.setId(5);
+
+
+    
     }
 
 }
