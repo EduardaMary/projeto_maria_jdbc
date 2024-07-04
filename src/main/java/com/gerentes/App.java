@@ -2,12 +2,11 @@ package com.gerentes;
 
 import com.gerentes.dao.DiciplinaPojo;
 import com.gerentes.dao.DiciplinaDao;
-import com.gerentes.modelo.Diciplina;
 
 public class App {
     public static void main(String[] args)
     {   
-        /*  
+        /*  CADASTRAR
         Diciplina diciplina = new Diciplina();
         diciplina.setNome("matematica");
         diciplina.setCargaHoraria(16);
@@ -23,14 +22,15 @@ public class App {
         diciplinaDao.cadastrarDiciplina(diciplinaPojo);
         =========================================================================================*/
 
-        /*
+        /* CONSULTAR
         DiciplinaPojo diciplinaPojo = new DiciplinaPojo();
         diciplinaPojo.setId(2);
 
         DiciplinaDao diciplinaDao = new DiciplinaDao();
         diciplinaDao.consultarDiciplina(diciplinaPojo);
         =========================================================================================*/
-        
+
+        /* ALTERAR
         Diciplina diciplina = new Diciplina();
         diciplina.setNome("Back end");
         diciplina.setCargaHoraria(9);
@@ -46,14 +46,17 @@ public class App {
 
         DiciplinaDao diciplinaDao = new DiciplinaDao();
         diciplinaDao.Alterardiciplina(diciplinaPojo);
+        =========================================================================================*/
+      
 
+        /* DELETAR */
+        DiciplinaPojo diciplinaPojo = new DiciplinaPojo();
+        diciplinaPojo.setId(2);
 
+        DiciplinaDao diciplinaDao = new DiciplinaDao();
+        diciplinaDao.deletardiciplina(diciplinaPojo);
 
 
        // diciplinaPojo.setId(5);
-
-
-    
     }
-
 }
